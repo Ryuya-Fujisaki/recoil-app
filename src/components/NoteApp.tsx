@@ -34,7 +34,7 @@ export const NoteApp: React.FC = () => {
         ))}
       </div>
       <div className="button_area">
-        <button onClick={handleCreate}>追加</button>
+        <button className="add-button" onClick={handleCreate}>追加</button>
       </div>
     </div>
   );

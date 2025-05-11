@@ -69,7 +69,9 @@ export const NoteItem: React.FC<Props> = ({ item }) => {
         />
         完了
       </label>
-      <button onClick={handleDelete}>削除</button>
+      <div className="button_area">
+        <button className="delete-button" onClick={handleDelete}>削除</button>
+      </div>
     </div>
   );
 };
