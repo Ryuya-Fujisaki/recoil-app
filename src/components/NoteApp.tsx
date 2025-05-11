@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { notesAtom } from "../atoms/notesAtom";
 import { NoteStats } from "./NoteStats";
@@ -36,6 +36,33 @@ export const NoteApp: React.FC = () => {
       <div className="button_area">
         <button className="add-button" onClick={handleCreate}>追加</button>
       </div>
+      <div>
+        <Parent />
+      </div>
+    </div>
+  );
+};
+
+type ChildProps = {
+  onClick: () => void;
+};
+
+const Child = ({ onClick }: ChildProps) => {
+  console.log("Child re-rendered");
+  return <button onClick={onClick}>テストボタン</ button>
+};
+
+const Parent = () => {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    setCount(prev => prev + 1);
+  }, []);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <Child onClick={handleClick} />;
     </div>
   );
 };
