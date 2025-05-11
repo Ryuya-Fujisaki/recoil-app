@@ -50,7 +50,7 @@ type ChildProps = {
 const Child = ({ onClick }: ChildProps) => {
   console.log("Child re-rendered");
   return <button onClick={onClick}>テストボタン</ button>
-};
+}
 
 const Parent = () => {
   const [count, setCount] = useState(0);
