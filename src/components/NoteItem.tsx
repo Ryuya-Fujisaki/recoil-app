@@ -19,7 +19,7 @@ export const NoteItem: React.FC<Props> = ({ item }) => {
   /**
    * 入力欄を更新したときの処理です。
    */
-  const handleChangeText = useCallback(
+  const handleChangeText =
     (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       const value = event.target.value;
 
@@ -30,10 +30,7 @@ export const NoteItem: React.FC<Props> = ({ item }) => {
 
       // 更新
       setNotes(newList);
-    },
-
-    [notes, setNotes],
-  );
+    };
 
   /**
    * チェックボックスを押下したときの処理です。
@@ -48,10 +45,10 @@ export const NoteItem: React.FC<Props> = ({ item }) => {
     setNotes(newList);
   };
 
-  const handleDelete = useCallback(() => {
+  const handleDelete = () => {
     const newList = notes.filter((_, i) => i !== index);
     setNotes(newList);
-  }, [notes, index, setNotes]);
+  };
 
   return (
     <div className="noteItem">
