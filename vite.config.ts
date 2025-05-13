@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   // 生成先 ../docs に変更
   build: {
-    outDir: "../docs",
+    outDir: "dist",
     // 生成先を空にする
     emptyOutDir: true,
   },
